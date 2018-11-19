@@ -34,11 +34,6 @@ def plot_image(i1, i2, data):
 print("Starting computation...")
 
 for i in range(len(clusterAmounts)):
-    # TODO:
-    # Use your k-means implementation to find 'k' cluster centers in
-    # the colors 'colors'.  Assign the variable 'center_colors' with the
-    # representative color of each center (dimension: k x 3).  The array
-    # 'map_to_centers' should contain the center of each color in 'colors'.
 	
     map_to_centers, center_colors = my_kmeans(colors,clusterAmounts[i])
     
@@ -49,7 +44,7 @@ for i in range(len(clusterAmounts)):
     plot_image(i, 1, map_to_centers) # clusters
     axes[i, 1].set_title("Clusters k={}".format(clusterAmounts[i]))
     
-    # TODO:
+
     # Plot a reconstruction of the image, using only the cluster centers as colors
     reconstructed = colors.copy()
     for c in range(clusterAmounts[i]):
